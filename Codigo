@@ -1,0 +1,79 @@
+using System;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    
+    {
+        //Variables
+        string nombreCliente;
+        string tipoCliente;
+        decimal monto;
+        int opcionCiudad;
+        int cantidadItem;
+        string metodoDeEnvio = "Estandar";
+
+        string categoria;
+        decimal costoEnvio = 10000;
+
+        
+        // Entradas
+        Console.WriteLine("SISTEMA DE CLASIFICACIÓN DE PEDIDOS");
+
+        Console.Write("Nombre del cliente: ");
+        nombreCliente = Console.ReadLine();  
+
+        Console.Write("Tipo de cliente (nuevo / recurrente): ");
+        tipoCliente = Console.ReadLine().ToLower();
+
+        Console.Write("¿Cuál es el monto del pedido? ");
+        monto = Convert.ToDecimal(Console.ReadLine());
+
+        Console.WriteLine("Ciudad destino: ");
+        Console.WriteLine("1. Medellín");
+        Console.WriteLine("2. Otra ciudad");
+        Console.Write("Elija una opción (1 o  2): ");
+        opcionCiudad = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Cantidad de items: ");
+        cantidadItem = Convert.ToInt32(Console.ReadLine());
+
+
+        //Condiciones
+        if (tipoCliente == "recurrente" && monto >= 60000)
+        {
+            metodoDeEnvio = "Gratis";
+            costoEnvio = 0;
+        }
+
+        if(cantidadItem >10)
+        {
+            metodoDeEnvio = "Gratis";
+            costoEnvio = 0;
+        }
+
+        if (opcionCiudad == 2 && metodoDeEnvio != "Gratis")
+        {
+            costoEnvio = 17000;
+        }
+
+        if(tipoCliente == "nuevo" && monto < 30000 && metodoDeEnvio != "Gratis")
+        {
+            metodoDeEnvio = "Estandar con recargo";
+            costoEnvio = 13000;
+        }
+
+        if(monto >= 60000 && cantidadItem >10)
+            categoria = "Pedido grande";
+        else
+            categoria = "Pedido pequeño";
+
+        //Salida
+        Console.WriteLine("-- RESUMEN DEL PEDIDO --");   
+        Console.WriteLine("Cliente: " + nombreCliente);
+        Console.WriteLine("Tipo Cliente: " + tipoCliente);
+        Console.WriteLine("Categoría: " + categoria);
+        Console.WriteLine("Metodo de envío: "  + metodoDeEnvio);
+        Console.WriteLine("Costo de envío: " + costoEnvio);
+    }
+}
