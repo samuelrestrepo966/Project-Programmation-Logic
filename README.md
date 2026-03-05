@@ -4,6 +4,11 @@ Samuel Restrepo Giraldo
 Descripción del problema: 
 Un sistema que recibe la información de un pedido realizado en una tienda en línea y determina su categoría de despacho y el costo de envío correspondiente. Para cumplir eso utiliza información como el nombre del cliente, el tipo de cliente, monto del pedido, ciudad destino, cantidad de ítems y el método de envío.
 
+
+
+
+
+
 PROYECTO: Sistema de clasificación de pedidos
         Entradas: 
         * nombrecliente
