@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        // ===== CAPA DE DATOS: declarada FUERA del ciclo para persistir =====
+        // ==== Dato =====
         List<string>  nombresProductos = new List<string>();
         List<double>  preciosProductos = new List<double>();
         List<int>     cantidades       = new List<int>();
