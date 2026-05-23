@@ -121,4 +121,22 @@ Acción	Entrada	Resultado esperado
 8	Confirmar pago	si	"Pedido confirmado."
 9	No confirmar pago	no	"Pedido pendiente de pago."
 
+**Instrucciones de ejecucion**
+Pasos para compilar y usar el sistema desde cero.
+1	Abrir el proyecto
+Abrir ProyectoLogica_Samuel_y_Deivy.cs 
+2	Compilar y ejecutar
+Presionar F5 en Visual Studio, o ejecutar dotnet run en la terminal dentro de la carpeta del proyecto.
+3	Seleccionar producto
+Cuando aparezca la lista, escribir el numero del producto deseado (del 1 al 18) y presionar Enter. Solo se aceptan numeros.
+4	Ingresar cantidad
+Escribir la cantidad de unidades y presionar Enter. El sistema calcula y muestra el subtotal.
+5	Continuar o terminar
+Responder si para agregar otro producto o no para finalizar la compra.
+6	Revisar el resumen
+El sistema muestra el total parcial, descuento (5% si supera $100.000) y costo de domicilio ($0 desde $20.000, $5.000 si es menor).
+7	Elegir medio de pago
+Seleccionar 1 para Nequi, 2 para Bancolombia o 3 para Efectivo. Si la opcion es invalida, el sistema vuelve a preguntar.
+8	Cierre del pedido
+El sistema confirma el pedido con el medio de pago elegido. Si no se agrego ningun producto, el pedido se cancela automaticamente.
 
