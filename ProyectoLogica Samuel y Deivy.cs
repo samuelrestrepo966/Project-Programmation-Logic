@@ -19,7 +19,7 @@ public class Program
     }
 
     /// Muestra la lista de productos disponibles numerados con su precio.
-    /// <param name="productos">Lista de productos a mostrar.</param>
+    /// Lista de productos a mostrar.
     static void MostrarProductos(List<Producto> productos)
     {
         Console.WriteLine("\n======= PRODUCTOS DISPONIBLES =======");
@@ -30,7 +30,7 @@ public class Program
     }
 
     /// Lee la entrada del usuario para seleccionar un producto por número.
-    /// <returns>Texto ingresado por el usuario en minúsculas.</returns>
+    /// Texto ingresado por el usuario en minúsculas.
     static string LeerEntradaProducto()
     {
         Console.WriteLine("\nEscribe el NUMERO del producto:");
@@ -38,7 +38,7 @@ public class Program
     }
  
     /// Lee la cantidad deseada del producto seleccionado.
-    /// <returns>Cantidad ingresada por el usuario.</returns>
+    /// Cantidad ingresada por el usuario.
     static int LeerCantidad()
     {
         Console.WriteLine("Ingrese la cantidad:");
@@ -46,8 +46,8 @@ public class Program
     }
  
     /// Muestra el resumen del producto agregado y su subtotal.
-    /// <param name="producto">Producto seleccionado.</param>
-    /// <param name="subtotal">Subtotal calculado para ese producto.</param>
+    /// "producto":Producto seleccionado.
+    /// subtotal":Subtotal calculado para ese producto.
     static void MostrarSubtotal(Producto producto, double subtotal)
     {
         Console.WriteLine($"\nProducto: {producto.Nombre}");
@@ -55,7 +55,7 @@ public class Program
     }
  
     /// Pregunta al usuario si desea seguir agregando productos.
-    /// <returns>True si el usuario responde "si".</returns>
+    /// True si el usuario responde "si".
     static bool PreguntarContinuar()
     {
         Console.WriteLine("\n¿Desea agregar otro producto? (si/no)");
@@ -63,10 +63,10 @@ public class Program
     }
  
     /// Muestra el resumen final con totales, descuentos y costo de domicilio.
-    /// <param name="totalParcial">Total antes de descuento y domicilio.</param>
-    /// <param name="descuento">Valor del descuento aplicado (0 si no aplica).</param>
-    /// <param name="domicilio">Costo del domicilio (0 si es gratis).</param>
-    /// <param name="totalFinal">Total final a pagar.</param>
+    /// "totalParcial":Total antes de descuento y domicilio.
+    /// "descuento":Valor del descuento aplicado (0 si no aplica).
+    /// "domicilio":Costo del domicilio (0 si es grati).
+    /// "totalFinal":Total final a pagar.
     static void MostrarResumenFinal(double totalParcial, double descuento, double domicilio, double totalFinal)
     {
         Console.WriteLine("\n==============================");
@@ -86,7 +86,7 @@ public class Program
     }
  
     /// Muestra las opciones de medio de pago y retorna el elegido.
-    /// <returns>Nombre del medio de pago seleccionado, o null si es inválido.</returns>
+    /// Nombre del medio de pago seleccionado, o null si es inválido.
     static string SeleccionarMedioPago()
     {
         Console.WriteLine("\n======= MEDIO DE PAGO =======");
@@ -107,8 +107,8 @@ public class Program
     }
  
     /// Muestra el mensaje de cierre del pedido con el medio de pago usado.
-    /// <param name="confirmado">True si el pago fue confirmado.</param>
-    /// <param name="medioPago">Nombre del medio de pago seleccionado.</param>
+    /// "confirmado":True si el pago fue confirmado.
+    /// "medioPago":Nombre del medio de pago seleccionado.
     static void MostrarCierrePedido(bool confirmado, string medioPago)
     {
         if (confirmado)
@@ -124,7 +124,7 @@ public class Program
     // ─────────────────────────────────────────
  
     /// Inicializa y retorna la lista de productos de la tienda.
-    /// <returns>Lista de productos disponibles.</returns>
+    /// Lista de productos disponibles.
     static List<Producto> InicializarProductos()
     {
         return new List<Producto>
@@ -167,25 +167,25 @@ public class Program
     }
  
     /// Calcula el subtotal de un producto según la cantidad.
-    /// <param name="precio">Precio unitario del producto.</param>
-    /// <param name="cantidad">Cantidad de unidades.</param>
-    /// <returns>Subtotal (precio × cantidad).</returns>
+    /// "precio":Precio unitario del producto.
+    /// "cantidad":Cantidad de unidades.
+    /// Subtotal (precio × cantidad).
     static double CalcularSubtotal(double precio, int cantidad)
     {
         return precio * cantidad;
     }
 
     /// Calcula el descuento del 5% si el total supera $100.000.
-    /// <param name="total">Total parcial de la compra.</param>
-    /// <returns>Valor del descuento a aplicar (0 si no aplica).</returns>
+    /// "total":Total parcial de la compra.
+    /// Valor del descuento a aplicar (0 si no aplica).
     static double CalcularDescuento(double total)
     {
         return total >= 100000 ? total * 0.05 : 0;
     }
 
     /// Calcula el costo de domicilio: gratis si el total es mayor o igual a $20.000.
-    /// <param name="total">Total de la compra tras descuento.</param>
-    /// <returns>Costo del domicilio (0 o 5000).</returns>
+    /// "total":Total de la compra tras descuento.
+    /// Costo del domicilio (0 o 5000).
     static double CalcularDomicilio(double total)
     {
         return total >= 20000 ? 0 : 5000;
@@ -197,8 +197,8 @@ public class Program
  
     /// Ejecuta el ciclo principal de compra: muestra productos, recibe selección
     /// y acumula el total. Retorna 0 si no se agregó ningún producto.
-    /// <param name="productos">Lista de productos disponibles.</param>
-    /// <returns>Total parcial acumulado de la compra.</returns>
+    /// "productos":Lista de productos disponibles.
+    /// Total parcial acumulado de la compra.
     static double EjecutarCicloCompra(List<Producto> productos)
     {
         double totalCompra = 0;
@@ -229,10 +229,10 @@ public class Program
  
     /// Calcula el total final aplicando descuento y domicilio.
     /// Solo aplica domicilio si hay productos (total > 0).
-    /// <param name="totalParcial">Total acumulado antes de ajustes.</param>
-    /// <param name="descuento">Salida: valor del descuento aplicado.</param>
-    /// <param name="domicilio">Salida: costo del domicilio.</param>
-    /// <returns>Total final a pagar.</returns>
+    /// "totalParcial">Total acumulado antes de ajustes.
+    /// "descuento">Salida: valor del descuento aplicado.
+    /// "domicilio">Salida: costo del domicilio.
+    /// Total final a pagar.
     static double CalcularTotalFinal(double totalParcial, out double descuento, out double domicilio)
     {
         descuento = CalcularDescuento(totalParcial);
